@@ -9,25 +9,19 @@ public class Hari : MonoBehaviour
 {
     public Color platformColor;
     public Transform respawnPoint;
-    
+
 
     // Update is called once per frame
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        ColorSwitcher switcher = collision.gameObject.GetComponent<ColorSwitcher>();
-
-        if (switcher != null )
+        ColorSwitcher switcher = other.GetComponent<ColorSwitcher>();
+        if (switcher != null)
         {
-            if ( switcher.CurrentColor == platformColor )
+            if (switcher.CurrentColor != platformColor)
             {
-                Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
-
-            }
-            else
-            {
-                collision.gameObject.transform.position = respawnPoint.position;
-                Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
-                if ( rb != null )
+                other.transform.position = respawnPoint.position;
+                Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
+                if (rb != null)
                 {
                     rb.velocity = Vector2.zero;
                     rb.angularVelocity = 0f;
@@ -35,6 +29,8 @@ public class Hari : MonoBehaviour
             }
         }
     }
+
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         ColorSwitcher switcher = collision.gameObject.GetComponent<ColorSwitcher>();
