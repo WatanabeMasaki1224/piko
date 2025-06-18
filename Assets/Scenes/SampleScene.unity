@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 260180950}
   - component: {fileID: 260180949}
   - component: {fileID: 260180947}
-  - component: {fileID: 260180954}
+  - component: {fileID: 260180952}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -268,7 +268,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &260180954
+--- !u!114 &260180952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -277,11 +277,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 260180946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b316ec66982e194e9a766fc055fd9ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e9d16cd96819ff48a92e9f6c83779ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformColor: {r: 1, g: 0, b: 0, a: 1}
-  respawnPoint: {fileID: 346987119}
+  enemyColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &346987118
 GameObject:
   m_ObjectHideFlags: 0
