@@ -42,7 +42,7 @@ public class movejump : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // "Ground"タグが付いたオブジェクトに接しているかを判定
-        if (collision.transform.CompareTag("ground"))
+        if (collision.transform.CompareTag("Untagged"))
         {
             jumpCount = 0;
 
