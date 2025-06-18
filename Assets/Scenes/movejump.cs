@@ -34,7 +34,7 @@ public class movejump : MonoBehaviour
 
             if (jumpCount < maxJumpCount)
             {
-                m_rb.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
+                m_rb.AddForce(Vector2.up * m_jumpSpeed, ForceMode2D.Impulse);
                 jumpCount++;
             }
         }
