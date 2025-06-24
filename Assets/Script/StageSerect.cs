@@ -9,6 +9,7 @@ public class StageSerect : MonoBehaviour
     public void  LoadStage1()
     {
         SceneManager.LoadScene("Stage1");
+        Debug.Log("ƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚Ü‚µ‚½I");
     }
 
     // Update is called once per frame
