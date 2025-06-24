@@ -14,18 +14,31 @@ public class movejump : MonoBehaviour
 
     private int jumpCount = 0;
     public int maxJumpCount = 1; // 1段ジャンプ
+    private Animator anim;
 
 
     void Start()
     {
         m_rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         float moveX = Input.GetAxis("Horizontal");
-        m_rb.velocity = new Vector2(moveX * m_movePower,m_rb.velocity.y);
+        m_rb.velocity = new Vector2(moveX * m_movePower,m_rb.velocity.y); //左右移動
+        anim.SetBool("Run", moveX != 0f);　//アニメーション
+
+        if(moveX > 0)//向き処理
+        {
+            transform.localScale = new Vector2(1, 1); // 右向き
+        }
+        else
+        {
+            transform.localScale = new Vector2(-1, 1); // 右向き
+        }
+
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -36,8 +49,10 @@ public class movejump : MonoBehaviour
             {
                 m_rb.AddForce(Vector2.up * m_jumpSpeed, ForceMode2D.Impulse);
                 jumpCount++;
+                anim.SetBool("Jump", true); // ジャンプアニメ開始
             }
         }
+       
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -45,6 +60,7 @@ public class movejump : MonoBehaviour
         if (collision.transform.CompareTag("Untagged"))
         {
             jumpCount = 0;
+            anim.SetBool("Jump", false); // 着地アニメへ戻す
 
         }
     }

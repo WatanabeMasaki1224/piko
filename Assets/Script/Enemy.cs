@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
         if (movingRight)
         {
             transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+            transform.localScale = new Vector2(1,1);
             if (currentPops.x >= startPops.x + moveDistance)
             {
                 movingRight = false;
@@ -29,7 +30,8 @@ public class Enemy : MonoBehaviour
         else
         {
             transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
-            if(currentPops.x <= startPops.x - moveDistance)
+            transform.localScale = new Vector2(-1, 1);
+            if (currentPops.x <= startPops.x - moveDistance)
             {
                 movingRight=true;
             }

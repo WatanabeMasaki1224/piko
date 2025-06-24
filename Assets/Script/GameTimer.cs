@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro; // TextMeshPro を使うために必要！
+using UnityEngine.SceneManagement; // ←シーン切り替えに必要
 
 public class GameTimer : MonoBehaviour
 {
@@ -45,4 +46,11 @@ public class GameTimer : MonoBehaviour
         float seconds = time % 60f;
         return string.Format("{0:00}:{1:00.00}", minutes, seconds);
     }
+    
+
+public void BackToTitle()
+{
+    SceneManager.LoadScene("Title"); // ← タイトルシーン名に合わせて修正！
+}
+
 }
