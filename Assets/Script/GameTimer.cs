@@ -37,7 +37,7 @@ public class GameTimer : MonoBehaviour
     {
         isTiming = false;
         clearPanel.SetActive(true);
-        clearTimeText.text = "クリアタイム：" + FormatTime(timeElapsed);
+        clearTimeText.text = "クリアタイム" + FormatTime(timeElapsed);
     }
 
     private string FormatTime(float time)

@@ -1512,11 +1512,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5162727995158854938, guid: 71919fe5cd5dc1b48a3b1a03d4d7293e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 71.56
+      value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 5162727995158854938, guid: 71919fe5cd5dc1b48a3b1a03d4d7293e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.07
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 5162727995158854938, guid: 71919fe5cd5dc1b48a3b1a03d4d7293e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1666,13 +1666,49 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1059685999925680836, guid: bd77e5422dd2d804daf688532064559b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 1059685999925680836, guid: bd77e5422dd2d804daf688532064559b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 209
+      objectReference: {fileID: 0}
     - target: {fileID: 2084954348937259912, guid: bd77e5422dd2d804daf688532064559b, type: 3}
       propertyPath: m_CullTransparentMesh
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3032744915055960205, guid: bd77e5422dd2d804daf688532064559b, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a44373a17fae6c14fb9b1ed03226cbf0, type: 2}
+    - target: {fileID: 3032744915055960205, guid: bd77e5422dd2d804daf688532064559b, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2879939041448229165, guid: a44373a17fae6c14fb9b1ed03226cbf0, type: 2}
+    - target: {fileID: 3032744915055960205, guid: bd77e5422dd2d804daf688532064559b, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3450688527516242400, guid: bd77e5422dd2d804daf688532064559b, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7961746921652162018, guid: bd77e5422dd2d804daf688532064559b, type: 3}
+      propertyPath: m_text
+      value: "\u30BF\u30A4\u30C8\u30EB\u3078"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7961746921652162018, guid: bd77e5422dd2d804daf688532064559b, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a44373a17fae6c14fb9b1ed03226cbf0, type: 2}
+    - target: {fileID: 7961746921652162018, guid: bd77e5422dd2d804daf688532064559b, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2879939041448229165, guid: a44373a17fae6c14fb9b1ed03226cbf0, type: 2}
+    - target: {fileID: 7961746921652162018, guid: bd77e5422dd2d804daf688532064559b, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8271503871143748898, guid: bd77e5422dd2d804daf688532064559b, type: 3}
       propertyPath: m_Pivot.x

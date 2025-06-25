@@ -18,6 +18,10 @@ public class Camera: MonoBehaviour
     {
         Vector3 targetPos = target.transform.position - diff;
         targetPos.z = transform.position.z; // Z²ŒÅ’è
-        transform.position = Vector3.Lerp(this.transform.position, target.transform.position - diff, Time.deltaTime * followSpeed); //üŒ`•âŠÔŠÖ”‚É‚æ‚éƒJƒƒ‰‚ÌˆÚ“®
+        targetPos.x = Mathf.Round(targetPos.x * 100f) / 100f;
+        targetPos.y = Mathf.Round(targetPos.y * 100f) / 100f;
+
+        transform.position = targetPos;
     }
+    
 }

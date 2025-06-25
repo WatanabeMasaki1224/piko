@@ -17,5 +17,10 @@ public class GoalSeen : MonoBehaviour
             timer.StopTimer(); // タイマー停止
             Debug.Log("ゴール！");
         }
+        ClearEffect effect = FindObjectOfType<ClearEffect>();
+        if (effect != null)
+        {
+            effect.PlayConfetti();
+        }
     }
 }
