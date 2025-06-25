@@ -16,11 +16,15 @@ public class movejump : MonoBehaviour
     public int maxJumpCount = 1; // 1段ジャンプ
     private Animator anim;
 
+    [SerializeField] AudioClip jumpSE;          // ← Inspector で設定
+    private AudioSource audioSource;
 
     void Start()
     {
         m_rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -50,6 +54,18 @@ public class movejump : MonoBehaviour
                 m_rb.AddForce(Vector2.up * m_jumpSpeed, ForceMode2D.Impulse);
                 jumpCount++;
                 anim.SetBool("Jump", true); // ジャンプアニメ開始
+
+                // ジャンプSE再生
+                if (jumpSE != null && audioSource != null)
+                {
+                    audioSource.PlayOneShot(jumpSE);
+                    Debug.Log("ジャンプSEを再生します");
+                }
+                else
+                {
+                    if (jumpSE == null) Debug.LogWarning("jumpSE が null です！");
+                    if (audioSource == null) Debug.LogWarning("audioSource が null です！");
+                }
             }
         }
        
