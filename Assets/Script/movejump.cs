@@ -38,9 +38,9 @@ public class movejump : MonoBehaviour
         {
             transform.localScale = new Vector2(1, 1); // 右向き
         }
-        else
+        else　if(moveX < 0) 
         {
-            transform.localScale = new Vector2(-1, 1); // 右向き
+            transform.localScale = new Vector2(-1, 1); // 左向き
         }
 
 
@@ -61,11 +61,7 @@ public class movejump : MonoBehaviour
                     audioSource.PlayOneShot(jumpSE);
                     Debug.Log("ジャンプSEを再生します");
                 }
-                else
-                {
-                    if (jumpSE == null) Debug.LogWarning("jumpSE が null です！");
-                    if (audioSource == null) Debug.LogWarning("audioSource が null です！");
-                }
+               
             }
         }
        

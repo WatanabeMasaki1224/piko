@@ -38,6 +38,16 @@ public class GameTimer : MonoBehaviour
         isTiming = false;
         clearPanel.SetActive(true);
         clearTimeText.text = "クリアタイム" + FormatTime(timeElapsed);
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            movejump controller = player.GetComponent<movejump>();
+            if (controller != null)
+            {
+                controller.enabled = false; // ← プレイヤー操作を無効化！
+            }
+        }
     }
 
     private string FormatTime(float time)
@@ -46,11 +56,11 @@ public class GameTimer : MonoBehaviour
         float seconds = time % 60f;
         return string.Format("{0:00}:{1:00.00}", minutes, seconds);
     }
-    
 
-public void BackToTitle()
-{
-    SceneManager.LoadScene("Title"); // ← タイトルシーン名に合わせて修正！
-}
+
+    public void BackToTitle()
+    {
+        SceneManager.LoadScene("Title"); // ← タイトルシーン名に合わせて修正！
+    }
 
 }
